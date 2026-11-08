@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LifeSim Engine API</title>
+<meta name="description" content="The LifeSim Engine, the life simulation behind LifeSim, as an API: its world lent, with a key: lives, outlooks, people alive now and lives lived a step at a time.">
+<link rel="canonical" href="https://lifesimworld.github.io/en/api/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#8C1D3C">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="LifeSim">
+<meta property="og:url" content="https://lifesimworld.github.io/en/api/">
+<meta property="og:title" content="LifeSim Engine API">
+<meta property="og:description" content="The LifeSim Engine, the life simulation behind LifeSim, as an API: its world lent, with a key: lives, outlooks, people alive now and lives lived a step at a time.">
+<meta property="og:image" content="https://lifesimworld.github.io/og-en.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link href="/fonts/fonts.css" rel="stylesheet">
+<link rel="alternate" hreflang="ko" href="https://lifesimworld.github.io/ko/api/">
+<link rel="alternate" hreflang="en" href="https://lifesimworld.github.io/en/api/">
+<link rel="alternate" hreflang="ja" href="https://lifesimworld.github.io/ja/api/">
+<link rel="alternate" hreflang="zh-Hant" href="https://lifesimworld.github.io/zh/api/">
+<link rel="alternate" hreflang="vi" href="https://lifesimworld.github.io/vi/api/">
+<link rel="alternate" hreflang="fr" href="https://lifesimworld.github.io/fr/api/">
+<link rel="alternate" hreflang="th" href="https://lifesimworld.github.io/th/api/">
+<link rel="alternate" hreflang="es" href="https://lifesimworld.github.io/es/api/">
+<link rel="alternate" hreflang="de" href="https://lifesimworld.github.io/de/api/">
+<link rel="alternate" hreflang="pt" href="https://lifesimworld.github.io/pt/api/">
+<link rel="alternate" hreflang="ru" href="https://lifesimworld.github.io/ru/api/">
+<link rel="alternate" hreflang="tr" href="https://lifesimworld.github.io/tr/api/">
+<link rel="alternate" hreflang="id" href="https://lifesimworld.github.io/id/api/">
+<link rel="alternate" hreflang="it" href="https://lifesimworld.github.io/it/api/">
+<link rel="alternate" hreflang="ar" href="https://lifesimworld.github.io/ar/api/">
+<link rel="alternate" hreflang="fa" href="https://lifesimworld.github.io/fa/api/">
+<link rel="alternate" hreflang="uk" href="https://lifesimworld.github.io/uk/api/">
+<link rel="alternate" hreflang="pl" href="https://lifesimworld.github.io/pl/api/">
+<link rel="alternate" hreflang="x-default" href="https://lifesimworld.github.io/en/api/">
+<style>.t{border-collapse:collapse;width:100%;table-layout:fixed;margin:10px 0 16px;font-size:.92em}.t td:first-child,.t th:first-child{width:38%}.t code{white-space:normal;word-break:break-all}.t td,.t a{white-space:normal;overflow-wrap:anywhere}.t th,.t td{border-bottom:1px solid #0002;padding:6px 8px;text-align:left;vertical-align:top}pre{background:#0000000d;padding:12px;border-radius:8px;overflow-x:auto;font-size:.85em;line-height:1.45}code{font-size:.92em;word-break:break-word}.beta{display:inline-block;font-size:.5em;border:1px solid currentColor;border-radius:6px;padding:0 6px;margin-left:6px;vertical-align:middle}pre.pr{white-space:pre-wrap;word-break:break-word;font-size:.88em}ol li{margin:6px 0}</style><style>.try-cta{background:#0000000a;border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px}</style><style>.plans[hidden],.pcard[hidden]{display:none!important}.plans{margin:22px 0 8px}.plans h2{margin-bottom:4px}.pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:14px 0 10px}.pcard{display:flex;flex-direction:column;background:var(--card,#F7FAF8);border:1px solid var(--rule,#C7D2CE);border-radius:10px;padding:16px 16px 14px}.pcard h3{margin:0;font-size:1.05em}.pcard .pfor{margin:0 0 10px;color:var(--ink2,#4A5A61);font-size:.9em}.pcard .pprice{margin:6px 0 4px;font-size:.95em;color:var(--ink2,#4A5A61)}.pcard .pprice b{font-size:1.9em;color:var(--ink,#13212A);letter-spacing:-.01em}.pcard ul{margin:0 0 14px;padding-inline-start:18px;font-size:.9em}.pcard li{margin:3px 0}.pcard .pbtn{margin-top:auto;display:block;text-align:center;background:var(--accent,#8C1D3C);color:var(--accent-ink,#fff);text-decoration:none;font-weight:600;padding:11px 12px;border-radius:8px}.pcard .pbtn:hover{filter:brightness(1.08)}.pcard .pbtn:focus-visible{outline:2px solid var(--accent,#8C1D3C);outline-offset:2px}.pcard .pbtn2{background:transparent;color:var(--accent,#8C1D3C);border:1px solid var(--accent,#8C1D3C)}.pcard .pbtn+.pbtn{margin-top:8px}.pcard p.pyear{margin:0 0 8px;font-size:.88em;color:var(--ink2,#4A5A61)}.pcard p.pyear b{color:var(--ink,#13212A)}.puse{margin:6px 0 10px}.puse h3{margin:14px 0 4px;font-size:1em}.puse .t td:nth-child(2),.puse .t th:nth-child(2){width:24%;text-align:end}.puse .t td:nth-child(3),.puse .t th:nth-child(3){width:22%}.puse .t th{white-space:normal;overflow-wrap:anywhere;vertical-align:bottom}.puse .t td:first-child,.puse .t th:first-child{width:auto}.puse .unote{font-size:.86em;color:var(--ink2,#4A5A61);margin:4px 0 0}.plans .pnote{font-size:.86em;color:var(--ink2,#4A5A61)}pre[dir=ltr],.t code{direction:ltr;unicode-bidi:embed}.mcp{margin:22px 0 10px;padding:18px 18px 12px;border:2px solid var(--stamp,#0F6E68);border-radius:12px;background:var(--card,#F7FAF8)}.mcp h2{margin:0 0 4px}.mcp>p{margin:6px 0}.msteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:14px 0 12px;padding:0;list-style:none}.mstep{background:var(--paper,#EBF0ED);border:1px solid var(--rule,#C7D2CE);border-radius:10px;padding:14px 14px 12px}.mstep .mn{display:inline-flex;align-items:center;justify-content:center;width:1.7em;height:1.7em;border-radius:50%;background:var(--stamp,#0F6E68);color:var(--paper,#fff);font-weight:700;font-size:.9em;margin-inline-end:6px}.mstep b{font-size:1em}.mstep p{margin:8px 0 0;font-size:.9em;color:var(--ink2,#4A5A61)}.maddr{display:block;margin:10px 0 0;padding:10px 12px;border-radius:8px;border:1px dashed var(--stamp,#0F6E68);background:var(--card,#F7FAF8);font:600 .95em/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink,#13212A);direction:ltr;text-align:left;white-space:nowrap;overflow-x:auto;-webkit-user-select:all;user-select:all}.mcp .mex{font-size:.92em}</style><style>
+:root{--paper:#EBF0ED;--card:#F7FAF8;--ink:#13212A;--ink2:#4A5A61;--ink3:#7A898D;--rule:#C7D2CE;--accent:#8C1D3C;--accent-ink:#fff;--stamp:#0F6E68}
+@media (prefers-color-scheme:dark){:root{--paper:#0D1316;--card:#141D21;--ink:#E1E9E6;--ink2:#A3B2AF;--ink3:#73837F;--rule:#2A383D;--accent:#E2678A;--accent-ink:#1B0910;--stamp:#4CC0AF;color-scheme:dark}}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font:16px/1.7 'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--accent)}
+.top{display:flex;justify-content:space-between;align-items:center;max-width:860px;margin:0 auto;padding:18px 16px}
+.brand{font:700 22px/1 Hahmlet,serif;color:var(--ink);text-decoration:none;letter-spacing:-.02em}.brand em{font-style:normal;color:var(--accent)}
+.act{display:flex;align-items:center;gap:14px;flex:1;min-width:0;justify-content:flex-end}.langs{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:2px}.langs a{color:var(--ink2);font-size:14px;font-weight:500;line-height:1;text-decoration:none;border-radius:999px;padding:8px 11px}.langs a:hover{color:var(--ink)}.langs a[aria-current=page]{background:var(--ink);color:var(--paper);font-weight:600}
+@media (max-width:560px){.top{flex-wrap:wrap;row-gap:8px}.act{display:contents}.go{order:2}.langs{order:3;flex-basis:100%;justify-content:flex-end;flex-wrap:wrap}.langs a{font-size:13.5px;padding:8px 7px;white-space:nowrap}}
+@media (max-width:440px){.langs{display:grid;grid-template-columns:repeat(3,auto);justify-content:end}.langs a{text-align:center}}
+.go{background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:9px 16px;border-radius:4px;font-size:15px}
+main{max-width:860px;margin:0 auto;padding:8px 16px 40px}
+h1{font:700 clamp(30px,7vw,44px)/1.2 Hahmlet,serif;letter-spacing:-.025em;margin:14px 0 10px}
+h2{font:700 21px/1.35 Hahmlet,serif;margin:34px 0 12px}
+.kicker{font-size:13px;color:var(--stamp);font-weight:600;letter-spacing:.02em}
+.lead{font-size:17px;margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.st{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:12px 14px}
+.st b{display:block;font:700 22px/1.3 Hahmlet,serif}.st span{display:block;font-size:13px;color:var(--ink2)}.st small{display:block;font-size:12px;color:var(--ink3);margin-top:4px}
+.cta{display:block;margin:30px 0 6px;padding:18px 20px;background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:4px}
+.cta p{margin:0 0 12px}.cta a.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:12px 22px;border-radius:4px}
+ul.tags{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--rule);border-radius:999px;padding:3px 12px;font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums}th,td{padding:8px 6px;border-bottom:1px solid var(--rule);text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{font-size:12px;color:var(--ink2);font-weight:600}
+.tw{overflow:visible}th{position:sticky;top:0;z-index:1;background:var(--paper);box-shadow:inset 0 -1px 0 var(--rule)}
+@media (max-width:860px){.tw{overflow:auto;max-height:78vh;-webkit-overflow-scrolling:touch}}
+footer{max-width:860px;margin:0 auto;padding:20px 16px 48px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--ink2)}
+</style>
+</head>
+<body>
+<header class="top"><a class="brand" href="/en/">LifeSim</a><span class="act"><span class="langs"><a href="/en/api/" hreflang="en" lang="en" aria-current="page">English</a><a href="/ko/api/" hreflang="ko" lang="ko">한국어</a><a href="/ja/api/" hreflang="ja" lang="ja">日本語</a><a href="/zh/api/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/vi/api/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/fr/api/" hreflang="fr" lang="fr">Français</a><a href="/th/api/" hreflang="th" lang="th">ไทย</a><a href="/es/api/" hreflang="es" lang="es">Español</a><a href="/de/api/" hreflang="de" lang="de">Deutsch</a><a href="/pt/api/" hreflang="pt" lang="pt">Português</a><a href="/ru/api/" hreflang="ru" lang="ru">Русский</a><a href="/tr/api/" hreflang="tr" lang="tr">Türkçe</a><a href="/id/api/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/it/api/" hreflang="it" lang="it">Italiano</a><a href="/ar/api/" hreflang="ar" lang="ar">العربية</a><a href="/fa/api/" hreflang="fa" lang="fa">فارسی</a><a href="/uk/api/" hreflang="uk" lang="uk">Українська</a><a href="/pl/api/" hreflang="pl" lang="pl">Polski</a></span><a class="go" href="/en/">Be born</a></span></header>
+<main>
+
+<p class="kicker">LifeSim Engine · the life simulation behind LifeSim</p>
+<h1>LifeSim Engine API</h1>
+<p class="lead">The LifeSim Engine is the life simulation behind <a href="/en/">LifeSim</a>, where you are born as one of the babies arriving on Earth right now, by the real share of births in 172 countries and territories, and live that one life. It connects figures from the UN, WHO and the World Bank into one model of how lives go. This API lends you that world: you cannot change it, but inside it you may do almost anything. Begin a life anywhere and in any year the world has, with any condition of birth it has; decide what the person decides; meet people of any age alive today; stop anywhere and live on. For stories, games and simulations of your own, apps, teaching and research, with a free key.</p>
+<p><b>Everything here is simulated.</b> The lives follow real statistics, but they are not the real world, real people, records or forecasts. Say so wherever you show them, above all in research.</p>
+<p>For research and teaching: <a href="/en/methods/">Methods and validation</a> (the sources, how the engine is fitted to them, how close it comes to the data, what it leaves out, how to cite it), and research editions that stay the same for a year (<code>engine</code>, below).</p>
+<section class="plans" id="plans">
+<h2>Plans</h2>
+<p>Start with a free key, and choose a plan when you need more.</p>
+<div class="pcards"><div class="pcard"><h3>Free</h3><p class="pprice"><b>US$0</b></p><p class="pfor">to try the engine and experiment a little</p><ul><li>2,000 life units a month</li><li>up to 5 lives a call on life, 60 units on simulate</li><li>30 engine calls a minute</li></ul><span class="pbtn pbtn2" aria-disabled="true" style="opacity:.5;cursor:not-allowed">Coming soon</span></div><div class="pcard" data-plan="builder"><h3>Builder</h3><p class="pprice"><b>US$9</b> / month</p><p class="pyear" data-plan="builder">or <b>US$90</b> / year<span class="psave" data-plan="builder"> · 12 months for the price of 10</span></p><p class="pfor">one person or a small project</p><ul><li>200,000 life units a month</li><li>up to 50 lives a call on life, 400 units on simulate</li><li>300 engine calls a minute</li></ul><span class="pbtn" aria-disabled="true" style="opacity:.5;cursor:not-allowed">Coming soon</span><span class="pbtn pbtn2 pyear" aria-disabled="true" style="opacity:.5;cursor:not-allowed">Coming soon</span></div><div class="pcard" data-plan="studio"><h3>Studio</h3><p class="pprice"><b>US$69</b> / month</p><p class="pyear" data-plan="studio">or <b>US$690</b> / year<span class="psave" data-plan="studio"> · 12 months for the price of 10</span></p><p class="pfor">a large project, a world with many people living in it</p><ul><li>5,000,000 life units a month</li><li>up to 100 lives a call on life, 400 units on simulate</li><li>1,500 engine calls a minute</li></ul><span class="pbtn" aria-disabled="true" style="opacity:.5;cursor:not-allowed">Coming soon</span><span class="pbtn pbtn2 pyear" aria-disabled="true" style="opacity:.5;cursor:not-allowed">Coming soon</span></div></div>
+<div class="puse"><h3>Plans by use</h3><table class="t"><tr><th>Use</th><th>Life units a month</th><th>Plan</th></tr><tr><td><b>Characters for a novel or a comic</b>: 50 characters, four lives drawn for each to choose from</td><td>200</td><td>Free</td></tr><tr><td><b>A class</b>: 30 students, five lives each over four lessons</td><td>600</td><td>Free</td></tr><tr><td><b>An app with 10,000 users</b>: three lives a user a month</td><td>30,000</td><td>Builder</td></tr><tr><td><b>A study of every country</b>: 300 lives of each sex in each of the 172 places</td><td>103,200</td><td>Builder</td></tr><tr><td><b>An app with 200,000 users</b>: three lives a user a month</td><td>600,000</td><td>Studio</td></tr><tr><td><b>A study across birth years</b>: 600 lives for each of the 76 years from 1950 to 2025 in 10 countries (a past year is 2 units)</td><td>912,000</td><td>Studio</td></tr></table><p class="unote">A life is 1 unit (2 when it begins in a past year or the coming world). Research, teaching, nonprofits and journalism, used without making money, can ask for the builder size free for a year (<a href="/en/api/#public">how</a>).</p></div>
+<p class="pnote">A plan is a subscription sold through Link by Stripe, which is the seller of record and handles the tax, the receipts and cancelling. After paying you come back to a page that shows your key once, on the plan you chose; a key sent before to the email address you paid with stops working, and its month's use carries over. Lost the key?Payment details stay with Stripe; we keep the subscription's number with the key's hash while it runs, and the checkout's number until the key is shown, 3 days at most (<a href="/en/privacy/">privacy</a>).</p>
+<p class="pnote">Cancel any time from your Link receipt: the plan runs to the end of the period you paid for, then the key goes back to the free plan.<span class="pyear-note"> On a yearly plan the life units come anew each month, the same amount as on a monthly one.</span>The <a href="#terms">terms</a> apply to every plan.Free for public-interest use: <a href="#public">below</a>.</p>
+<p class="pnote-cn" hidden>In mainland China a plan is bought once with Alipay: 30 days or a year, with no renewal. For these sales the operator is the seller and handles the tax, the receipts and refunds. After paying you come back to a page that shows your key once, and a key sent before to that address stops working (the month's use carries over). Buying the same plan again adds its time after what is left; when the time ends the key goes back to the free plan. Lost the key?Payment details stay with Stripe, and the <a href="/en/api/#terms">terms</a> apply.</p>
+</section>
+<section class="mcp" id="mcp">
+<h2>Connect it to an AI app (MCP)</h2>
+<p>Add the engine as a connector in an AI app such as Claude and use it just by talking, with no code and no files. Three steps.</p>
+<ol class="msteps"><li class="mstep"><span class="mn">1</span><b>Get a free key</b></li><li class="mstep"><span class="mn">2</span><b>Add a custom connector</b><p>In Claude (web or desktop), open Settings → Connectors, choose ‘Add custom connector’ and enter the address below. In another AI app, put the same address in its MCP connector menu.</p><code class="maddr" dir="ltr">https://lifesimworld.github.io/mcp</code></li><li class="mstep"><span class="mn">3</span><b>Paste the key once</b><p>Press ‘Connect’ and a lifesimworld.github.io page opens. Paste your key there once and you are done. The key never goes to the AI app.</p></li></ol>
+<p class="mex">Then just ask: ‘Live three generations, starting with a grandmother born in Korea in 1950’, or ‘Compare children in India in 1960 and today’. Each call uses your key’s units. The tools, what stays out and the protocol are <a href="#mcp-more">below</a>.</p>
+</section>
+<h2 id="start">Start</h2>
+<p>1.A free key comes back by email at once.</p>
+<p>2. Try it first, with no code: <a href="/en/api/try/">Try the LifeSim Engine</a> calls the engine with buttons and your key, and gives each call back as code and as a prompt for an AI. The link in your key mail opens it with the key already in.</p>
+<p>3. Then send it with each engine call:</p>
+<pre>curl -H 'Authorization: Bearer k8b_…' 'https://lifesimworld.github.io/api/v1/life?country=NGA&amp;year=1980&amp;record=1'
+
+curl -H 'Authorization: Bearer k8b_…' 'https://lifesimworld.github.io/api/v1/person?country=PER&amp;age=70'
+
+fetch('https://lifesimworld.github.io/api/v1/simulate?country=BRA&amp;sex=female&amp;by=fifth&amp;at=20,40', { headers: { Authorization: 'Bearer k8b_…' } }).then(r =&gt; r.json())</pre>
+<p>Answers are JSON (UTF-8) and can be called from a web page (CORS) to try the engine with your key typed in; in an app, call it from your server (see Keys). Each has a <code>meta</code> block (the API version, the engine's version, <code>simulated</code>: what the lives are and are not, your plan, links to this page and the credit line) and, on engine calls, <code>usage</code>. An AI tool can read the whole API from <code>/api/v1/openapi.json</code>.</p>
+<h2 id="mcp-more">From an AI app (MCP)</h2>
+<p>Add the engine as a connector in an AI app that speaks MCP (the Model Context Protocol), such as Claude: add a custom connector with the address <code>https://lifesimworld.github.io/mcp</code>. When you connect, our page opens and asks for your API key once; the app then holds its own tokens for that key (we keep only their hashes, the key is not kept, and the app never sees it). Ask in your own words, and the app calls the engine for you.</p>
+<table class="t"><tr><th>tool</th><th>what</th></tr>
+<tr><td><code>live_a_life</code></td><td>/life: one to three lives (country, year or future, sex, fifth, place, record, seed, lang)</td></tr>
+<tr><td><code>compare_lives</code></td><td>/simulate: an outlook, up to 4 countries and 6 worlds side by side (country, years, sex, n, at, by, fifth, place, seed, lang)</td></tr>
+<tr><td><code>meet_person</code></td><td>/person: someone alive now, or someone looked for (country, age, sex, job, education, partnered, children, record, seed, lang)</td></tr>
+<tr><td><code>family_line</code></td><td>/lineage: 2 to 5 generations (country, year, generations, sex, record, seed, lang)</td></tr></table>
+<p>Each tool call is an engine call on your key: the same units, limits and terms. The tools take the common parameters; the rest (who a person is, the lines that need care, <code>/live</code>, whose tokens are too large for a chat) stays in the HTTP API. Turning the key off, or writing for a new one, ends the app's connections: connect again with the new key.</p>
+<p>For those building clients: Streamable HTTP without sessions (each POST one JSON-RPC message, answered as JSON; no stream); OAuth 2.1 with PKCE (S256) for public clients, Dynamic Client Registration (<code>/oauth/register</code>) and Client ID Metadata Documents; discovery at <code>/.well-known/oauth-protected-resource/mcp</code> and <code>/.well-known/oauth-authorization-server</code>; access tokens last an hour, refresh tokens 90 days and are replaced at each use.</p>
+<h2 id="build">Use it in a project</h2>
+<ul><li><b>NPCs and virtual worlds:</b> people alive now (<code>/person</code>) as your townspeople, with their work, family and the history they lived through; one <code>/live</code> call moves 10 of them a year on.</li><li><b>Apps and interactive stories:</b> <code>/live</code> sends each decision with the odds the world gives it. You draw the screen; the person chooses.</li><li><b>AI evaluation and research:</b> test an AI on people drawn by where people live, or compare lives under different conditions. Say that the results come from a simulation.</li><li><b>Classes and history:</b> be born in any year from 1950; each year brings the country as it was and the history that reached people.</li><li>Every call and condition is below; AI tools can read <code>/api/v1/openapi.json</code>.</li></ul>
+<h2 id="ai">Without coding, with an AI</h2>
+<p>You do not need to write code. Ask the AI chat you use to make you a small page that uses the engine, then open it in your browser: a good way to learn how to build things with an AI. This guide is in every edition&#x27;s language (the links at the top).</p>
+<ol><li><b>Get a key:</b>It starts with <code>k8b_</code>.</li><li><b>Ask an AI:</b> copy the text below into the AI chat you use. Do not give the AI your key.</li><li><b>Open the file:</b> download the HTML file the AI makes and open it in your browser. A preview inside the chat may block the connection.</li><li><b>Experiment:</b> paste your key in the box at the top, pick two countries and compare. If something goes wrong, paste the error on the screen into the AI chat and it will fix it.</li></ol>
+<h3>The text to copy and paste</h3>
+<pre class="pr" dir="auto">Make me one HTML file that I can open in my web browser: HTML, CSS and JavaScript all in that one file, nothing to install.
+It compares simulated lives in two countries using the LifeSim Engine API (docs: https://lifesimworld.github.io/en/api/).
+
+1. A box at the top where I paste my API key (it starts with k8b_). Use it only while the page is open; never write it into the file.
+2. Two country menus filled from https://lifesimworld.github.io/api/v1/countries (no key needed): use each entry&#x27;s iso3, and show name.en. An optional birth year box from 1950 to 2025; empty means today&#x27;s world.
+3. A &quot;Compare&quot; button that, for each country, calls
+   https://lifesimworld.github.io/api/v1/simulate?country=ISO3&amp;n=15
+   (add &amp;year=YYYY when a year is set) with the header Authorization: Bearer &lt;key&gt;
+4. Each answer has &quot;female&quot; and &quot;male&quot;, each with age_at_death.mean (average age at death), survival[&quot;65&quot;] (share alive at 65), children_by_46 (average number of children by 46), at_40.working (share working at 40) and at_40.education (shares by schooling at 40). Shares are numbers from 0 to 1. Show the two countries side by side in plain English sentences and simple bar charts.
+5. Under the results write: &quot;Simulated lives from the LifeSim Engine (lifesimworld.github.io), not real people. With 15 lives of each sex the figures are rough.&quot;
+6. If a call fails, show the &quot;error&quot; text from the answer.
+My free key allows 60 life units a call and 2000 a month. This comparison uses 30 a country (60 with a birth year), so keep n at 15.</pre>
+<p><b>Then try:</b></p>
+<ul><li>Ask the AI to compare one country in two years instead, for example lives born in 1960 and today.</li><li>For one life as a story, ask it to use <code>/api/v1/life?record=1</code> and show the record year by year.</li><li>Change one thing at a time ("also show how lives end, with the names from /api/v1/causes", "make the charts clearer"): that is how building with an AI goes.</li></ul>
+<h2 id="endpoints">Endpoints</h2>
+<p><b>The engine</b>, with a key:</p>
+<table class="t"><tr><th>GET</th><th>what</th></tr><tr><td><code>/api/v1/life</code></td><td>lives, each lived from birth to the end (or to the age you stop it): where and when it began, who the person is, school, work, partner, children, moves, how and where it ended, and if you like each year in numbers, each decision met, the record</td></tr><tr><td><code>/api/v1/simulate</code></td><td>an outlook for the conditions you choose, over many lives at once: lifespan, survival, causes of death, at 40 schooling, work and income; partners, children, moves, what the lives met; grouped (by) and at the ages you ask (at); up to 4 countries and 6 worlds side by side in one call</td></tr><tr><td><code>/api/v1/lineage</code></td><td>a family line, one family: a life, then the life of its eldest child who grew up, with the family that life gave it, for 2 to 5 generations</td></tr><tr><td><code>/api/v1/person</code></td><td>people alive now: someone of any age in a country today, or someone you look for (a nurse in Korea, a grandmother in Peru), where they stand, with a token to live on from there</td></tr><tr><td><code>/api/v1/live</code></td><td>POST: a life lived from outside, a step at a time: you make each decision, set the focus of the year, spend from the sheet; the life&#x27;s state travels as a sealed token</td></tr></table>
+<p><b>Catalogs</b>, without a key: the codes the engine's answers use and their names, so you can show them in your language.</p>
+<table class="t"><tr><th>GET</th><th>what</th></tr><tr><td><code>/api/v1</code></td><td>this list</td></tr><tr><td><code>/api/v1/countries</code></td><td>the country codes a life uses, with names in 13 languages and the region</td></tr><tr><td><code>/api/v1/causes</code></td><td>the cause of death codes, with names in 13 languages</td></tr><tr><td><code>/api/v1/jobs</code></td><td>the job codes, with names in 13 languages and the sector</td></tr><tr><td><code>/api/v1/groups</code></td><td>the groups and castes a life can be born into, by country, with their names</td></tr><tr><td><code>/api/v1/openapi.json</code></td><td>the whole API as an OpenAPI 3.1 description, for AI tools (a GPT&#x27;s actions, an agent&#x27;s tools) and code generators</td></tr></table>
+<h2 id="world">The world lent</h2>
+<p>The world stays as it is: its odds, its events and its tables are the engine's, and no call changes them. Inside it you choose: a condition of birth you ask for (<code>fifth</code>, <code>place</code>, <code>faith</code>, <code>group</code>, <code>disability</code>, <code>orientation</code>, <code>caste</code>, <code>gender</code>) is found among the world's own births, at their real shares, never made up; a combination the world does not have, or has too rarely, is refused (400). What the person decides is yours: a policy, picks by card, or each decision yourself with <code>/live</code>. What happens to them is the world's.</p>
+<h2 id="engine">Lives on request</h2>
+<p>The engine endpoints take these parameters, all optional:</p>
+<table class="t"><tr><th>parameter</th><th>what</th></tr><tr><td><code>country</code></td><td>ISO 3166-1 alpha-3 code. Leave it out and the engine draws the country by the share of births, as LifeSim does (/person: by the number of people living there). On simulate, up to 4 codes, comma-separated (<code>KOR,NGA</code>): one run for each.</td></tr><tr><td><code>years</code></td><td>simulate: up to 6 worlds to compare in one call, comma-separated: birth years 1950 to 2025, <code>today</code>, <code>future</code> (e.g. <code>1960,1990,today,future</code>): one run for each, and for each country asked; at most 8 runs a call. Not with year or future.</td></tr><tr><td><code>lang</code></td><td>the language of the record, the decisions, the events of /live and the names in them: <code>en</code> (the default), <code>ko</code>, <code>ja</code>, <code>zh</code> (Traditional, Taiwan usage), <code>vi</code>, <code>fr</code>, <code>th</code>, <code>es</code>, <code>de</code>, <code>pt</code> (Brazil), <code>ru</code>, <code>tr</code>, <code>id</code>, <code>it</code>, <code>ar</code>, <code>fa</code>, <code>uk</code>, <code>pl</code>, as LifeSim tells them. Codes and field names stay as they are. A /live life keeps the language it began in.</td></tr><tr><td><code>sex</code></td><td><code>female</code> or <code>male</code>. Leave it out for the draw (life, person) or for both (simulate).</td></tr><tr><td><code>year</code></td><td>a past birth year, 1950 to 2025: each year of the life is its country as it was then, with the wars, famines and crises of that year, and the projections after 2026. Leave out year and future for today's world, held as it is for the whole life.</td></tr><tr><td><code>future</code></td><td><code>1</code>: born today into the coming world: each year is the country as projected (UN WPP 2024 medium variant), with shocks at the rates history shows, AI changing work, ageing and a warming climate. Not with year.</td></tr><tr><td><code>fifth, place</code></td><td>the family at birth: <code>fifth</code> 1 to 5, its place among the country's income fifths; <code>place</code> <code>town</code> or <code>village</code>.</td></tr><tr><td><code>faith, group, disability, orientation</code></td><td>who the person is: <code>faith</code> christian, muslim, hindu, buddhist, jewish, none, folk, sikh, other; <code>group</code> an id of /api/v1/groups or <code>majority</code>; <code>disability</code> movement, hearing, sight (born with it), autism, intellectual, or none; <code>orientation</code> straight, gay_lesbian, bisexual, asexual (drawn at 12, as the simulation does; where the law punishes it, the life keeps it hidden: <code>kept_hidden</code>).</td></tr><tr><td><code>caste</code></td><td>an id of the <code>castes</code> in /api/v1/groups: the categories the state itself uses, in India (<code>scheduled_caste</code>, <code>obc</code>, <code>general</code>, <code>dalit_not_scheduled</code>; the Scheduled Tribes are <code>group=in_adiv</code>) and Nepal (<code>dalit</code>, <code>khas_arya</code>, <code>janajati</code>, <code>madhesi</code>), never a rank; the country follows. What a life meets is what the data has: being treated worse, not who one is, with the law and the reserved places as the way forward.</td></tr><tr><td><code>gender</code></td><td>only with <code>sensitive=1</code> (a trans life's story is one LifeSim keeps on the device): <code>trans_woman</code>, <code>trans_man</code>, <code>non_binary</code> or <code>cisgender</code>, drawn at 12 and only where a national count exists (Canada, the UK, the US: elsewhere the engine has none to draw, which does not mean there are none). <code>sex</code> stays the sex registered at birth. A trans man or woman is called by the name they chose (lines with the name they were given are left out), and whom they love is said by the gender they live as.</td></tr><tr><td><code>policy, pick</code></td><td>what the person decides when you do not: <code>policy</code> <code>auto</code> (what most people choose; the default) or <code>ambitious</code>; <code>pick</code> card:choice pairs, e.g. <code>college:uni,emigrate:go</code> (the card ids and choice keys show in <code>decisions</code>).</td></tr><tr><td><code>to, trace, decisions</code></td><td>life: <code>to</code> an age where the life stops, alive (its state in <code>now</code>); <code>trace=1</code> each year in numbers; <code>decisions=1</code> each decision met, its choices and the one made.</td></tr><tr><td><code>by, at</code></td><td>simulate: <code>by</code> sex, fifth, place, faith, group, disability, orientation, caste or gender (gender with <code>sensitive=1</code>) (the lives grouped by it, each group as many as the world gives); <code>at</code> up to 6 ages (e.g. <code>20,40,60</code>) for what the lives held then.</td></tr><tr><td><code>n</code></td><td>how many: for life and person 1 to 5 on the free plan (default 1); for simulate, lives of each sex (default 30), up to the plan's life units a call (60 on the free plan).</td></tr><tr><td><code>seed</code></td><td>a whole number from 0 to 4294967295. The same seed on the same engine version and in the same language gives the same lives; n lives use seed, seed + 1, ... (simulate's runs: seed + 2 for each run after the first). Leave it out for new lives each time (each life says the seed it had). In another language the same seed begins the same life, but the small moments the engine picks follow its own sentences, so the lives may part after some years.</td></tr><tr><td><code>engine</code></td><td>life and simulate: a research edition, <code>YYYY-MM</code> (the ones kept are <code>editions</code> in /api/v1). Each May and November the engine as it is then is frozen and kept for a year, so a finding can be run again by anyone with the same calls and seeds; the answer says its <code>edition</code> and the line to cite. The record in English or Korean (<code>lang</code>). Leave it out for the current engine, which changes almost every day. See <a href="/en/methods/">Methods and validation</a>.</td></tr><tr><td><code>generations, tries</code></td><td>lineage: <code>generations</code> 2 to 5 (default 3); <code>tries</code> 1 to 5 (default 3), how many times a generation that must go on is lived again when it had no child who grew up. <code>year</code> is the first generation's (default 1950).</td></tr><tr><td><code>record</code></td><td>life, person and lineage, <code>1</code>: the year-by-year record as the simulation tells it, in English (or the language of <code>lang</code>), as <code>[age, text]</code> or <code>[age, text, source]</code> when the line carries a real figure; <code>brief</code>: only the lines that carry the life (what happened, losses, milestones, history, hard years, the end), as <code>[age, text]</code>, about a third of the whole.</td></tr><tr><td><code>sensitive, suicide</code></td><td><code>sensitive=1</code>: the record's lines that LifeSim keeps on the reader's own device (drug dependence, sexual violence, violence at home, assisted dying and others) come too, each with its help line. <code>suicide=1</code>: a suicide is named, as a cause and in the record, with a help line beside it. Without them those lines are left out and a suicide's cause is empty. Ask for them only when your work needs them, and present them with care (see the terms).</td></tr></table>
+<p><code>/api/v1/life?country=KOR&amp;seed=7&amp;record=1</code>, with the record cut short:</p>
+<pre>{
+  &quot;meta&quot;: {
+    &quot;kind&quot;: &quot;life&quot;,
+    &quot;tier&quot;: &quot;free&quot;,
+    &quot;...&quot;: &quot;...&quot;
+  },
+  &quot;query&quot;: {
+    &quot;country&quot;: &quot;KOR&quot;,
+    &quot;n&quot;: 1,
+    &quot;seed&quot;: 7,
+    &quot;...&quot;: &quot;...&quot;
+  },
+  &quot;lives&quot;: [
+    {
+      &quot;seed&quot;: 7,
+      &quot;country&quot;: &quot;KOR&quot;,
+      &quot;born_year&quot;: 2026,
+      &quot;sex&quot;: &quot;M&quot;,
+      &quot;name&quot;: &quot;Jang Junwoo&quot;,
+      &quot;born_in_city&quot;: true,
+      &quot;education&quot;: &quot;university&quot;,
+      &quot;education_at_25&quot;: &quot;upper_secondary&quot;,
+      &quot;jobs&quot;: [
+        {
+          &quot;id&quot;: &quot;delivery&quot;,
+          &quot;from&quot;: 18,
+          &quot;to&quot;: 19
+        },
+        {
+          &quot;id&quot;: &quot;clerk&quot;,
+          &quot;from&quot;: 21,
+          &quot;to&quot;: 29
+        },
+        {
+          &quot;id&quot;: &quot;finance&quot;,
+          &quot;from&quot;: 29,
+          &quot;to&quot;: 34
+        },
+        {
+          &quot;id&quot;: &quot;clerk&quot;,
+          &quot;from&quot;: 34,
+          &quot;to&quot;: 39
+        },
+        {
+          &quot;id&quot;: &quot;clerk&quot;,
+          &quot;from&quot;: 41,
+          &quot;to&quot;: 45
+        },
+        {
+          &quot;id&quot;: &quot;clerk&quot;,
+          &quot;from&quot;: 46,
+          &quot;to&quot;: 65
+        },
+        {
+          &quot;id&quot;: &quot;driver&quot;,
+          &quot;from&quot;: 65,
+          &quot;to&quot;: 66
+        }
+      ],
+      &quot;first_partner_age&quot;: null,
+      &quot;children&quot;: 0,
+      &quot;first_child_age&quot;: null,
+      &quot;siblings&quot;: 2,
+      &quot;moves&quot;: [],
+      &quot;age_at_death&quot;: 96,
+      &quot;cause_of_death&quot;: &quot;ihd&quot;,
+      &quot;died_in&quot;: &quot;KOR&quot;,
+      &quot;who&quot;: {
+        &quot;faith&quot;: &quot;christian&quot;,
+        &quot;group&quot;: null,
+        &quot;orientation&quot;: &quot;straight&quot;,
+        &quot;disability&quot;: [],
+        &quot;caste&quot;: null
+      },
+      &quot;family_at_birth&quot;: {
+        &quot;parents&quot;: &quot;mother_and_father&quot;,
+        &quot;mother_age&quot;: 29,
+        &quot;father_age&quot;: 31,
+        &quot;father_there&quot;: true,
+        &quot;older_siblings&quot;: 0,
+        &quot;family_fifth&quot;: 4
+      },
+      &quot;met&quot;: [
+        {
+          &quot;age&quot;: 15,
+          &quot;year&quot;: 2041,
+          &quot;kind&quot;: &quot;storm&quot;,
+          &quot;severe&quot;: false,
+          &quot;near&quot;: true
+        },
+        {
+          &quot;age&quot;: 39,
+          &quot;year&quot;: 2065,
+          &quot;kind&quot;: &quot;economic_crisis&quot;
+        },
+        {
+          &quot;age&quot;: 52,
+          &quot;year&quot;: 2078,
+          &quot;kind&quot;: &quot;economic_crisis&quot;
+        },
+        {
+          &quot;age&quot;: 63,
+          &quot;year&quot;: 2089,
+          &quot;kind&quot;: &quot;economic_crisis&quot;
+        },
+        {
+          &quot;age&quot;: 67,
+          &quot;year&quot;: 2093,
+          &quot;kind&quot;: &quot;economic_crisis&quot;
+        },
+        {
+          &quot;age&quot;: 71,
+          &quot;year&quot;: 2097,
+          &quot;kind&quot;: &quot;economic_crisis&quot;
+        },
+        {
+          &quot;age&quot;: 80,
+          &quot;year&quot;: 2106,
+          &quot;kind&quot;: &quot;economic_crisis&quot;
+        },
+        {
+          &quot;age&quot;: 84,
+          &quot;year&quot;: 2110,
+          &quot;kind&quot;: &quot;economic_crisis&quot;
+        },
+        {
+          &quot;age&quot;: 88,
+          &quot;year&quot;: 2114,
+          &quot;kind&quot;: &quot;economic_crisis&quot;
+        },
+        {
+          &quot;age&quot;: 92,
+          &quot;year&quot;: 2118,
+          &quot;kind&quot;: &quot;economic_crisis&quot;
+        }
+      ],
+      &quot;record&quot;: [
+        [
+          0,
+          &quot;You had diarrhea for a few days, but a visit to the doctor soon put you right.&quot;,
+          &quot;Diarrheal disease is the third leading cause of death in children under 5 (WHO)&quot;
+        ],
+        [
+          0,
+          &quot;You got your basic vaccinations (DTP and measles).&quot;,
+          &quot;In 2023, 84% of infants worldwide received all three doses of the DTP vaccine (WHO·UNICEF)&quot;
+        ],
+        [
+          1,
+          &quot;Age 1. Of the boys born in South Korea the same year as you, nearly all are still alive.&quot;
+        ],
+        [
+          &quot;...&quot;
+        ]
+      ]
+    }
+  ],
+  &quot;usage&quot;: {
+    &quot;month&quot;: &quot;2026-11&quot;,
+    &quot;unit&quot;: &quot;life units&quot;,
+    &quot;used&quot;: 1,
+    &quot;quota&quot;: &quot;...&quot;
+  }
+}</pre>
+<table class="t"><tr><th>field</th><th>what</th></tr><tr><td><code>country, born_year, sex, name</code></td><td>where and when the life began; the name is drawn from the country's name lists and belongs to no real person</td></tr><tr><td><code>born_in_city</code></td><td>born in a city or not</td></tr><tr><td><code>who</code></td><td><code>faith</code>, <code>group</code> ({id, name} or null), <code>orientation</code> (null before 12), <code>disability</code> (a list), <code>caste</code> ({id, name} or null), and with <code>sensitive=1</code> <code>gender</code> (null before 12 and where no national count exists)</td></tr><tr><td><code>family_at_birth</code></td><td>the parents (mother_and_father, two_mothers, two_fathers), their ages, the father there or not, older siblings, the family's income fifth</td></tr><tr><td><code>education, education_at_25</code></td><td>the schooling reached in the end and at 25 (none, primary, lower_secondary, upper_secondary, university, graduate)</td></tr><tr><td><code>jobs</code></td><td>the work done, in order: <code>id</code> (see /api/v1/jobs), the ages <code>from</code> and <code>to</code></td></tr><tr><td><code>first_partner_age, children, first_child_age, siblings</code></td><td>the family</td></tr><tr><td><code>moves</code></td><td>moves to another country: <code>age</code>, <code>to</code> (ISO3), <code>refugee</code></td></tr><tr><td><code>age_at_death, cause_of_death, died_in</code></td><td>how long the life lasted, how it ended (see /api/v1/causes) and in which country; null while it goes on (<code>to</code>)</td></tr><tr><td><code>met</code></td><td>what the world brought to the life, in order, each <code>{age, year, kind}</code>: history that reached it (<code>war</code>, <code>war_in_birth_country</code>, <code>war_ended</code>, <code>famine</code>, <code>mass_violence</code>, <code>economic_crisis</code>, <code>pandemic</code>, <code>independence</code>, <code>earthquake</code>, <code>tsunami</code>), what struck its own home (<code>flood</code>, <code>storm</code>, <code>drought</code>, <code>earthquake</code>, <code>heatwave</code>, <code>economic_crisis</code>, with <code>severe</code>), <code>power_cuts</code> and <code>factory_jobs</code> (<code>more</code> true or false) of its place and time, <code>price_rise</code> and <code>price_fall</code> of the crop or metal it lived by (<code>what</code>), and the first <code>electricity</code>, <code>home_tv</code>, <code>home_phone</code>, <code>home_computer</code> and <code>mobile_phone</code> at home. <code>near</code>: true when it struck where the life was, false when it came as news. Only what the life met, as its record tells it; a line left out of the answer (see With care) is not counted either</td></tr><tr><td><code>now, trace, decisions, record</code></td><td>where it stands when stopped (<code>to</code>); and, when asked, each year in numbers (age, year, country, place, job, income in PPP dollars and its national percentile, net worth, health, happiness, knowledge, bonds out of 100, schooling, partner, children, electricity at home), each decision met, the record</td></tr><tr><td><code>seed</code></td><td>the seed that makes this life again</td></tr></table>
+<p><code>/api/v1/simulate</code> answers with <code>female</code> and <code>male</code> (or the one sex asked), each over the lives asked and with the seed it used: the age at death (mean and percentiles), who is still alive at 1, 5, 18, 40, 65, 80 and 90, how lives end, born in a city or not, and at 40 schooling, work, sector, income (the median national percentile, and the world's top tenth and bottom half), a home of one's own; the age of a first partner and a first child, partners by 50, children by 46, moving abroad and where to, being a refugee. <code>met</code> holds, for each kind of thing the lives met (as in a life's <code>met</code>), the share of the lives that met it at least once and the median age the first time. With <code>by</code>, <code>groups</code> holds each group's lifespan, survival to 65, children, moving abroad and causes; with <code>at</code>, <code>at_ages</code> what the living held at each age (schooling, work, income percentile, partner, children, living abroad, happiness, health, net worth in median incomes, electricity at home). Shares at an age are of the lives still alive then. With few lives the figures are rough: these are results of a model, with the uncertainty of a sample.</p>
+<p><b>Side by side.</b> With several countries (<code>country=KOR,NGA</code>) or worlds (<code>years=1960,1990,today,future</code>), or both, the answer has <code>runs</code>: one for each country and world, each <code>{country, year, world, female, male}</code> with the figures above, in the order asked (each country with each world). <code>/api/v1/simulate?country=KOR,NGA&amp;n=30</code> is the comparison of two countries in one call; <code>/api/v1/simulate?country=IND&amp;years=1960,1990,today&amp;at=10</code> shows how childhood changed (<code>electricity_at_home</code> at 10 among them). Each run counts its own units.</p>
+<p>Lives are lived at the simulation's own level, the one LifeSim itself uses (15 and over): hard roads come at their real shares (prison, dependence, violence), and the lines that need most care leave only when you ask (<code>sensitive</code>, <code>suicide</code>). Lives are simulated: they follow the real odds, so most are ordinary, and none is a real person's.</p>
+<h2 id="person">People alive now</h2>
+<p><code>/api/v1/person</code> meets someone living today: born <code>age</code> years ago (0 to 76; left out, drawn from the people living there by age) and lived up to today, with the policy and picks you give. The answer is where they stand (<code>state</code>: name, age, country, place, job, income, net worth, health, happiness, knowledge, bonds, partner, children, parents, who they are; and the family as it stands: <code>household</code>, who lives under the same roof and how many in all, <code>siblings</code> with their ages and who is still at home, the partner's work and faith, the parents' work, each child at home or not, abroad, married, at work) and their <code>family_at_birth</code>; ask for <code>trace</code>, <code>decisions</code> or <code>record</code> for the years behind them, and <code>token=1</code> for a token to live on with <code>/live</code>.</p>
+<p>Looking for someone: <code>job</code> (an id of /api/v1/jobs, or agriculture, industry, services), <code>education</code> (at least), <code>partnered</code>, <code>children</code> (at least), <code>abroad</code>, <code>working</code>. Each try lives one person to that age, so <code>tries</code> (default 10 with a search, at most 200) says how many may be met, and each counts; <code>tries_used</code> says how many were. Someone the world rarely has may not be found: allow more tries, or ask for less.</p>
+<h2 id="lineage">Generations</h2>
+<p><code>/api/v1/lineage?country=KOR&amp;year=1950&amp;generations=4</code> lives a family line, one family: the first life from its birth year to its end, then the life of its eldest child who grew up in it (living at its end, or past fifteen when it died), then that child's, and so on. Each child is born in the year the parent had it, in the country and the town or village where the parent lived then, into the income fifth the household had then, of the family's faith and group (found among the world's own births, never made), and into the family the parent's life gave it: its name, the parents' ages, whether the other parent was there and a parting, a mother's new partner, its brothers and sisters as they came, the years its parents and the parent's own parents died, and life at least to the age the parent's record follows it to. The parent's record leaves the child's years from fifteen to the child's own generation. A family line is the people who had children: a generation that must go on and had no child who grew up is lived again (<code>tries</code>, each counted in the work it does), and when none of the tries had one the line stops there (<code>ended</code>: <code>no_children</code>). A child born after today is born into the coming world, from today (<code>future</code>). The answer has <code>generations</code>, each a life as /life gives it with <code>generation</code> and <code>born_to</code> (the generation before and its age then), and <code>tries_used</code>; <code>record</code>, <code>trace</code>, <code>decisions</code>, <code>lang</code>, <code>policy</code> and <code>pick</code> apply to every generation, the conditions of birth to the first.</p>
+<h2 id="live">A life lived from outside</h2>
+<p><code>POST /api/v1/live</code> with a JSON body. To begin: <code>{}</code> or the conditions (<code>country</code>, <code>sex</code>, <code>year</code>, <code>future</code>, <code>age</code> to begin as someone alive now, <code>fifth</code>, <code>place</code>, <code>faith</code>, <code>group</code>, <code>disability</code>, <code>orientation</code>, <code>caste</code>, <code>gender</code>, <code>policy</code>, <code>pick</code>, <code>sensitive</code>, <code>suicide</code>, <code>seed</code>). The life runs to its first decision. Then, each step: <code>{"token": "...", "choose": "key"}</code>, and as you like <code>"focus": "key"</code> (the year's focus), <code>"buy": ["id"]</code> (from the spending sheet, bought after the step's choice, before the life goes on), <code>"until"</code>: <code>"decision"</code> (the default: on to the next one), <code>"year"</code> (to the next birthday, stopping at a decision), or an age (decisions on the way made by the policy and picks; at most 25 years a call).</p>
+<p>To look without living on (after a reload, say): <code>{"token": "...", "view": true}</code> gives where the life stands and what waits, counts no units and gives the same token back.</p>
+<p>Several lives at once (an app with many people living): <code>{"steps": [{"token": "...", "choose": "key"}, {"token": "...", "view": true}]}</code>, up to 10, gives <code>results</code> in the same order, each the answer below or its own error (<code>error</code>, <code>code</code>); each step counts one unit (a view none), and the call counts once against the calls a minute.</p>
+<p>Each answer has <code>state</code> (as in /person), <code>events</code> (the lines of the years since the last step, <code>[age, text]</code>), <code>decision</code> (<code>id</code>, <code>question</code>, <code>about</code>, <code>fact</code>, <code>choices</code> with <code>key</code>, <code>label</code>, <code>note</code>; null when none waits), <code>focus</code> (now and the options), <code>sheet</code> (what can be spent on now, also while a decision waits: <code>id</code>, <code>name</code>, <code>does</code>, <code>price_ppp</code>, <code>can</code>, <code>why</code>), <code>ended</code> and <code>death</code> at the end, and a new <code>token</code>. The token holds the whole life, sealed: we keep nothing, it cannot be read or changed, and it works for 90 days. Keep it to come back later, or send the same token again with another choice to see the other road: the world's dice go on the same way from there.</p>
+<h2 id="care">With care</h2>
+<p>Some lines LifeSim keeps on the device of the person living the life. Here they leave only when you ask: <code>sensitive=1</code> for drug dependence, sexual violence (never under 15), violence at home, assisted dying, a trans life's story (and <code>gender</code>) and the others; <code>suicide=1</code> for a suicide, as a cause and in the record, always with a help line beside it. The simulation tells them without method, place or detail, from the person's own side, with help-seeking and recovery as the usual course; keep it that way where you show them. Caste and a trans life are told the same way: from the person's own side, gaps only as the data has them, being treated worse and never who one is as what costs. The engine's own tables (its life tables, cause weights and the figures it is built on) are not served.</p>
+<h2 id="sources">Sources</h2>
+<p>The engine draws on these sources. Where you show what it gives, credit “LifeSim Engine (lifesimworld.github.io)”; the sources' own licences ask for their credit too.</p>
+<table class="t"><tr><th>id</th><th>source</th><th>licence</th></tr><tr><td><code>wpp</code></td><td><a href="https://population.un.org/wpp/">UN World Population Prospects 2024</a> · UN DESA Population Division</td><td>CC BY 3.0 IGO</td></tr><tr><td><code>igme</code></td><td><a href="https://childmortality.org/">UN Inter-agency Group for Child Mortality Estimation (UN IGME)</a> · UNICEF, WHO, World Bank, UN DESA</td><td>CC BY 4.0 (as published in World Bank WDI)</td></tr><tr><td><code>wdi</code></td><td><a href="https://databank.worldbank.org/source/world-development-indicators">World Development Indicators</a> · World Bank</td><td>CC BY 4.0</td></tr><tr><td><code>hdr</code></td><td><a href="https://hdr.undp.org/data-center">Human Development Report</a> · UNDP</td><td>CC BY 3.0 IGO</td></tr><tr><td><code>migstock</code></td><td><a href="https://www.un.org/development/desa/pd/content/international-migrant-stock">International Migrant Stock 2020</a> · UN DESA Population Division</td><td>CC BY 3.0 IGO</td></tr><tr><td><code>ghe</code></td><td><a href="https://www.who.int/data/global-health-estimates">Global Health Estimates 2021</a> · World Health Organization</td><td>CC BY 4.0</td></tr><tr><td><code>whr</code></td><td><a href="https://worldhappiness.report/data-sharing/">World Happiness Report 2024 (Figure 2.1 data)</a> · Wellbeing Research Centre, University of Oxford, with Gallup and the UN SDSN</td><td>free to download with citation (no licence named)</td></tr><tr><td><code>cmo</code></td><td><a href="https://www.worldbank.org/en/research/commodity-markets">Commodity Price Data (The Pink Sheet), annual 1960-2025</a> · World Bank</td><td>CC BY 4.0</td></tr><tr><td><code>oecdhp</code></td><td><a href="https://data-explorer.oecd.org/vis?df[ds]=dsDisseminateFinalDMZ&amp;df[id]=DSD_AN_HOUSE_PRICES%40DF_HOUSE_PRICES&amp;df[ag]=OECD.ECO.MPD">Analytical house prices: real house price index, annual 1970-2025</a> · OECD</td><td>CC BY 4.0</td></tr><tr><td><code>national</code></td><td>national statistics offices · as named in the note</td><td>reuse with credit</td></tr><tr><td><code>engine</code></td><td><a href="https://lifesimworld.github.io/en/api/#terms">LifeSim Engine (the life simulation behind LifeSim)</a> · lifesimworld.github.io</td><td>the API terms (use in your own works, with credit)</td></tr></table>
+<h2 id="limits">Limits</h2>
+<p>The engine is counted in <b>life units</b>: one life is one unit, and a life born in a past year or into the coming world is two (it takes the engine about twice the work). A simulate call over both sexes counts the lives of each. A person met is two (born in a past year; a newborn of today is one) for each try a search allows. A live life's start is one (two as someone alive now, or in a past year or the coming world), and each step after it one. A line (/lineage) is two for each generation, with the lives lived again counted in its work. A simulate call with several runs counts each.</p>
+<table class="t"><tr><th>the free plan</th><th>to try the engine</th></tr>
+<tr><td>life units</td><td>2,000 a month for each key</td></tr>
+<tr><td>in a call</td><td>life and person: up to 5; simulate: up to 60 life units (30 lives of each sex today)</td></tr>
+<tr><td>engine calls</td><td>30 a minute for each key</td></tr>
+<tr><td>the day</td><td>300,000 life units a day (UTC) for all free keys together; past them, free engine runs wait for the next day</td></tr>
+<tr><td>catalogs</td><td>about 60 a minute (past 120 a minute from one address: 429)</td></tr></table>
+<p>For a project that needs more (an app, a study, a world of your own with many people living in it): the <a href="#plans">plans</a>, at the top of this page.</p>
+<p id="public"><b>Free for public-interest use.</b> Research at a university or institute, teaching, nonprofits and public bodies, and journalism, used without making money, get the builder plan's size free for a year (200,000 life units a month, up to 50 lives a call on /life and 400 units on /simulate, 300 engine calls a minute).Once we say yes, that address's key moves onto it at once, or comes on it when you ask for one; after the year, ask again.</p>
+<p>Cache what you get. Catalogs carry an <code>ETag</code> (send <code>If-None-Match</code> for a 304) and may be kept for an hour. A call with a <code>seed</code> may be kept for a day; one without is new each time. Every call counts its units, also one answered from the cache, and a call that would go past the month is refused whole, without counting.</p>
+<p><b>Work past the units.</b> Some calls do far more work than their units say: a condition the world rarely has is found by drawing many births, and someone met at an age few reach is born again until one does. Such a call counts the work it did, about one unit for 400 births drawn or 100 years lived, when that is more than half again its units; ordinary calls never count more. <code>usage.this_call</code> says what a call counted. A call that would need more work than its plan allows a call stops with a 400 (<code>too_much_work</code>) and counts the work done; ask for fewer lives or tries, or fewer conditions.</p>
+<h2 id="keys">Keys</h2>
+<ul>
+<li><b>Getting one:</b>The key comes back to the address you wrote from. One key an address.</li>
+<li><b>Lost it:</b> write again from the same address. A new key replaces the old one, which stops working; the month's use carries over.</li>
+<li><b>Turning it off:</b> write again with “stop” in the subject; the key and its record are deleted.</li>
+<li><b>From an AI app</b> (<a href="#mcp">MCP</a>): the app acts with your key, so its calls count as yours, against the plan and the terms. Turning the key off or getting a new one ends its connections.</li>
+<li>Send it as <code>Authorization: Bearer k8b_…</code>. It is yours alone: keep it private, and do not share or sell it. We keep only its hash, never the key.</li>
+<li><b>Keep it on your server</b> (or in your own tools). A key built into a web page or an app people download can be read and copied, and what it is used for counts against you: its units, and the terms. For an app, call the engine from your server and pass on what your users need.</li>
+<li><b>Watched, and stopped when misused:</b> for each key we count, for the month, the kinds of calls it makes and the options it uses (above all <code>sensitive</code>, <code>suicide</code>, who a person is, searches), not what you do with the answers. A key that seems to be used against the terms may be turned off without warning, and its address gets no new key.</li>
+</ul>
+<p><b>Errors</b> are JSON too: <code>{"error": "...", "code": "...", "status": 400, "docs": "..."}</code>. 400 a parameter the engine cannot take (or a condition the world does not have), 401 no key or a key it does not know, 404 no such endpoint, 405 a method the endpoint does not take (POST only on /live), 413 a body too large, 429 too many calls or the units used up. <code>code</code> is for programs: <code>bad_request</code> (a parameter), <code>not_in_world</code> (conditions the world does not have, or too rarely, or no one reached the age), <code>too_much_work</code>, <code>plan_size</code> (more than the plan allows a call), <code>token</code> and <code>live_state</code> (a /live token, or a step that does not fit where the life stands), <code>key</code>, <code>rate</code> (calls a minute), <code>month</code> (the month's units; the answer's <code>more</code> links to the plans for more and <code>resets</code> gives the day the month starts again), <code>free_day</code> (the free plan's day), <code>too_many</code>, <code>not_found</code>, <code>method</code>, <code>too_large</code>, <code>unavailable</code>.</p>
+<h2 id="versions">Versions</h2>
+<p>v1 stays as it is: its paths and fields are not removed or renamed; new fields and parameters may appear, and the answers follow the engine. When <code>meta.engine</code> changes, the same seed may give a different life (a live token goes on as it is). The engine changes as LifeSim does, often, and older versions are not served: to reproduce a result, keep <code>meta.engine</code> and the date with it, and the lives you need. A change that would break v1 comes as v2, and v1 keeps working beside it.</p>
+<h2 id="terms">Terms of use</h2>
+<p>The engine, its tables and its text are ours. A key gives you access to the engine, and these terms give you the right to use what it answers as below, nothing more. Using a key means you accept them.</p>
+<p><b>What you may do</b>, freely and also commercially:</p>
+<ul>
+<li>use what the engine answers in your own works: stories, games, simulations and worlds of your own built on it, apps, bots, teaching, journalism, art; change it, translate it and mix it with your own;</li>
+<li>research: run lives and outlooks for a study and publish findings, charts and examples drawn from them. Research and papers must say plainly that the figures come from a simulation (the LifeSim Engine, its version and the date), that the lives are simulated and not the real world, and must not present them as measurements, official statistics or forecasts. Keep the answers you need for your own analysis; do not publish them as a dataset (see below).</li>
+<li>Credit “LifeSim Engine (lifesimworld.github.io)” with a link where you show it, and each source's credit as its licence asks.</li>
+</ul>
+<p><b>What you may not do:</b></p>
+<ul>
+<li>collect answers in bulk beyond what your work or study needs, or publish them as a collection or dataset others can download or reuse;</li>
+<li>copy, imitate or rebuild the engine, its tables or its text, including training or tuning a model on its answers to do what it does, or working its tables back out of many answers; or copy LifeSim itself (its name, text, art or screens): a work of your own on the engine is welcome, a copy of ours is not;</li>
+<li>offer the API or its answers as a service of your own (an API, a data feed), or share, sell or lend a key; get past the limits (many keys, many addresses);</li>
+<li>present simulated lives or outlooks as real records, official statistics or forecasts about real people or places without saying they come from a simulation, or use them to make decisions about a real person (health, insurance, credit, work, housing, migration);</li>
+<li>use who a person is (faith, group, caste, orientation, gender, disability) or any other condition to rank, single out, demean or stir up hatred against a group of people, to harass anyone, or to mislead (for example political or commercial claims passed off as facts). Showing how lives differ, and how people are treated differently, as the data has it, is fine;</li>
+<li>present a caste as above or below another, or a trans or non-binary life as a problem, a twist or a joke; a trans man or woman is called by the name they chose and the gender they live as;</li>
+<li>show the lines that need care (<code>sensitive</code>, <code>suicide</code>) carelessly: no method or detail, never as an answer to trouble, a reward, a score, a choice to make or a joke, never aimed at children, and a help line near them wherever they appear;</li>
+<li>use them for gambling or betting with real money;</li>
+<li>try to break, overload or get around the service or its protections (a live token included).</li>
+<li>Do not present your work as ours or as endorsed by us, and do not name it so it looks like the official site. The names LifeSim Engine and LifeSim and their pages are not licensed by these terms.</li>
+</ul>
+<ul>
+<li>We watch how each key is used (see Keys) and may limit, change or end access, for a key or for everyone, at any time, above all when these terms are broken.</li>
+<li>A plan given free for public-interest use is for the work it was asked for; using it to make money, or for other work, ends it.</li>
+<li>The service may be slow or briefly unavailable; it comes as it is, without warranty. The site's <a href="/en/terms/">terms</a> apply to everything not said here.</li>
+
+</ul>
+<h2 id="privacy">Privacy</h2>
+<p>We keep a count of answers by endpoint, without who asked. A key is kept only as a hash, with its plan, when it was made, the month's units, the month's counts of its calls by kind and option, and the hash of the address it was mailed to (one key an address); it is deleted when it is turned off, and the address hash of a key turned off for misuse is kept so no new key goes to it. A live life's state is in its token, with you, not with us. An AI app connected through MCP: we keep the hashes of its sign-in code (5 minutes) and tokens (an hour; 90 days for the refresh token, replaced at each use), with the key's hash, the hash of the app's id and the address it goes back to; your key is checked when you paste it and not kept, and what you ask the app stays with the app and its provider.<a href="/en/privacy/">privacy policy</a>).</p>
+
+</main>
+<footer><p><a href="/en/">LifeSim</a> · <a href="/en/about/">About</a> · <a href="/en/c/">All 172 countries and territories</a> · <a href="/ko/api/" hreflang="ko" lang="ko">한국어</a> · <a href="/ja/api/" hreflang="ja" lang="ja">日本語</a> · <a href="/zh/api/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a> · <a href="/vi/api/" hreflang="vi" lang="vi">Tiếng Việt</a> · <a href="/fr/api/" hreflang="fr" lang="fr">Français</a> · <a href="/th/api/" hreflang="th" lang="th">ไทย</a> · <a href="/es/api/" hreflang="es" lang="es">Español</a> · <a href="/de/api/" hreflang="de" lang="de">Deutsch</a> · <a href="/pt/api/" hreflang="pt" lang="pt">Português</a> · <a href="/ru/api/" hreflang="ru" lang="ru">Русский</a> · <a href="/tr/api/" hreflang="tr" lang="tr">Türkçe</a> · <a href="/id/api/" hreflang="id" lang="id">Bahasa Indonesia</a> · <a href="/it/api/" hreflang="it" lang="it">Italiano</a> · <a href="/ar/api/" hreflang="ar" lang="ar">العربية</a> · <a href="/fa/api/" hreflang="fa" lang="fa">فارسی</a> · <a href="/uk/api/" hreflang="uk" lang="uk">Українська</a> · <a href="/pl/api/" hreflang="pl" lang="pl">Polski</a> · <a href="/en/privacy/">Privacy policy</a></p>
+<p>Sources: UN World Population Prospects 2024 (births, population, life expectancy, fertility), UN IGME (child mortality), WHO and UN MMEIG (maternal mortality, tobacco, road deaths), UNDP and UNESCO (education), World Bank (income, inequality, internet use, health spending), ILO (employment in agriculture), UN-Habitat (urbanization), UNAIDS (HIV), UNODC (homicide), UNICEF (child marriage), World Happiness Report 2024. A few values without recent data are estimates filled in from regional averages.</p></footer>
+
+</body>
+</html>
