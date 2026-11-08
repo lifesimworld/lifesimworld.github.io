@@ -37,18 +37,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://lifesimworld.github.io/en/help/"/>
   </url>
   <url>
-    <loc>https://lifesimworld.github.io/tr/story/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://lifesimworld.github.io/tr/story/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimworld.github.io/en/story/"/>
-  </url>
-  <url>
-    <loc>https://lifesimworld.github.io/en/story/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://lifesimworld.github.io/tr/story/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://lifesimworld.github.io/en/story/"/>
-  </url>
-  <url>
     <loc>https://lifesimworld.github.io/tr/edu/</loc>
     <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://lifesimworld.github.io/tr/edu/"/>

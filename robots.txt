@@ -5,6 +5,5 @@ Disallow: /api/
 Disallow: /buy
 Disallow: /*/buy
 Disallow: /_bk/
-Disallow: /story/thanks/
 
 Sitemap: https://lifesimworld.github.io/sitemap.xml
