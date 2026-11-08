@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
+<script>try{if((JSON.parse(localStorage.getItem("lifesim.prefs.v1"))||{}).theme==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>If you were born in one of 172 countries and territories · births, life expectancy and child deaths by country and territory | LifeSim</title>
 <meta name="description" content="Where are today&#x27;s babies born? Compare the share of births, life expectancy, chance of dying before age 5 and income per person in 172 countries and territories, with real data from the UN, WHO and World Bank.">
@@ -37,8 +38,8 @@
 
 <link rel="alternate" hreflang="x-default" href="https://lifesimworld.github.io/en/c/">
 <style>
-:root{--paper:#F4ECDD;--card:#FBF6EC;--ink:#2A1A1C;--ink2:#5E4A47;--ink3:#76625A;--rule:#D9C8AE;--accent:#8C1D3C;--accent-ink:#fff;--stamp:#8A5A22}
-@media (prefers-color-scheme:dark){:root{--paper:#181012;--card:#221719;--ink:#F0E4D6;--ink2:#C2B0A4;--ink3:#96847A;--rule:#3D2C2E;--accent:#E2678A;--accent-ink:#1B0910;--stamp:#D9AE6A;color-scheme:dark}}
+:root{--paper:#181012;--card:#221719;--ink:#F0E4D6;--ink2:#C2B0A4;--ink3:#96847A;--rule:#3D2C2E;--accent:#E2678A;--accent-ink:#1B0910;--stamp:#D9AE6A;color-scheme:dark}
+:root[data-theme=light]{--paper:#F4ECDD;--card:#FBF6EC;--ink:#2A1A1C;--ink2:#5E4A47;--ink3:#76625A;--rule:#D9C8AE;--accent:#8C1D3C;--accent-ink:#fff;--stamp:#8A5A22;color-scheme:light}
 *{box-sizing:border-box}html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font:16px/1.7 'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;word-break:keep-all;overflow-wrap:break-word}
 a{color:var(--accent)}

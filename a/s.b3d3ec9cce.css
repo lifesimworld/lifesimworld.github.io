@@ -1280,7 +1280,7 @@ html[lang="it"] :where(dd, td, th, li, .row > span, .orow > span, .summary b, .m
 html[lang="de"] :where(dd, td, th, li, .row > span, .orow > span, .summary b, .money b, .fields b, #tgTip, .status, .scenecap)::first-letter { text-transform: uppercase; }
 html[lang="en"] .cl > li::first-letter, html[lang="vi"] .cl > li::first-letter, html[lang="fr"] .cl > li::first-letter, html[lang="es"] .cl > li::first-letter, html[lang="de"] .cl > li::first-letter, html[lang="pt"] .cl > li::first-letter, html[lang="ru"] .cl > li::first-letter, html[lang="uk"] .cl > li::first-letter, html[lang="pl"] .cl > li::first-letter, html[lang="tr"] .cl > li::first-letter , html[lang="id"] .cl > li::first-letter, html[lang="it"] .cl > li::first-letter{ text-transform: none; }
 
-.ending { position: fixed; inset: 0; z-index: 80; background: #0e1113; color: #ece6da; display: flex; align-items: center; justify-content: center;
+.ending { position: fixed; inset: 0; z-index: 80; background: #120b0d; color: #ece6da; display: flex; align-items: center; justify-content: center;
   padding: 56px 16px 48px; overflow-y: auto; opacity: 0; transition: opacity 1.2s ease; cursor: pointer; }
 .ending.on { opacity: 1; }
 .end-stage { width: min(560px, 100%); margin: auto; text-align: center; }
@@ -2083,9 +2083,9 @@ div.dec.kd-dec { width: min(1000px, 100%); }
   @page { size: A5; margin: 0; }
   @page rec { size: A5; margin: 14mm 12mm 16mm; }
 }
-.memo { position: fixed; inset: 0; z-index: 75; overflow-y: auto; background: #0e1113; color: #ece6da; }
+.memo { position: fixed; inset: 0; z-index: 75; overflow-y: auto; background: #120b0d; color: #ece6da; }
 .memo[hidden] { display: none; }
-.memo-bar { position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; background: rgba(14,17,19,.92); font-size: 13px; color: #a59f95; letter-spacing: .04em; z-index: 1; }
+.memo-bar { position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; background: rgba(18,11,13,.92); font-size: 13px; color: #a59f95; letter-spacing: .04em; z-index: 1; }
 .memo-bar .ghost { color: #ece6da; border-color: rgba(255,255,255,.3); }
 .memo-body { width: min(560px, 100%); margin: 0 auto; padding: 24px 16px 60px; text-align: center; }
 .memo-wait { color: #a59f95; margin: 40px 0; }

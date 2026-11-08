@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
+<script>try{if((JSON.parse(localStorage.getItem("lifesim.prefs.v1"))||{}).theme==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Terms of use · LifeSim</title>
 <meta name="description" content="LifeSim is a free life simulation game. How it works, content and age, rules of use and liability.">
@@ -37,8 +38,8 @@
 
 <link rel="alternate" hreflang="x-default" href="https://lifesimworld.github.io/en/terms/">
 <style>table.who{border-collapse:collapse;width:100%;table-layout:fixed;font-size:14.5px;margin:6px 0}table.who th{width:9em;text-align:left;font-weight:400;color:var(--ink2);font-size:13px;padding:7px 12px 7px 0;vertical-align:top;white-space:normal;border-bottom:1px solid var(--rule)}table.who td{padding:6px 0;text-align:left;white-space:normal;overflow-wrap:anywhere;border-bottom:1px solid var(--rule)}li{margin:6px 0}.note{font-size:14px;color:var(--ink2)}</style><style>
-:root{--paper:#F4ECDD;--card:#FBF6EC;--ink:#2A1A1C;--ink2:#5E4A47;--ink3:#76625A;--rule:#D9C8AE;--accent:#8C1D3C;--accent-ink:#fff;--stamp:#8A5A22}
-@media (prefers-color-scheme:dark){:root{--paper:#181012;--card:#221719;--ink:#F0E4D6;--ink2:#C2B0A4;--ink3:#96847A;--rule:#3D2C2E;--accent:#E2678A;--accent-ink:#1B0910;--stamp:#D9AE6A;color-scheme:dark}}
+:root{--paper:#181012;--card:#221719;--ink:#F0E4D6;--ink2:#C2B0A4;--ink3:#96847A;--rule:#3D2C2E;--accent:#E2678A;--accent-ink:#1B0910;--stamp:#D9AE6A;color-scheme:dark}
+:root[data-theme=light]{--paper:#F4ECDD;--card:#FBF6EC;--ink:#2A1A1C;--ink2:#5E4A47;--ink3:#76625A;--rule:#D9C8AE;--accent:#8C1D3C;--accent-ink:#fff;--stamp:#8A5A22;color-scheme:light}
 *{box-sizing:border-box}html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font:16px/1.7 'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;word-break:keep-all;overflow-wrap:break-word}
 a{color:var(--accent)}
